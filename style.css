@@ -1,0 +1,52 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-family: "Gotham";
+    display: block;
+    padding: 0px 20px;
+}
+
+a:hover{
+    background-color: rgba(46, 45, 45, 0.3);
+}
+
+
+ul{
+    list-style: none;
+}
+
+nav{
+    height: 50px;
+    background: #F4F5F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul .btn-menu.show{
+    display: block;
+}
+
+ul#main-ul{
+    background: #F4F5F8;
+    margin: auto;
+    width: 90%;
+}
+
+.menu-li{
+    float: left;/*caso precise adicionar outra catergoria*/
+    line-height: 50px;
+}
+
+ul li ul li{
+    background: #F4F5F8;
+}
+
+.menu-ul{
+    display: none;
+}
