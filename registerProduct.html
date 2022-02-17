@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Cadastrar Camisas</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./registerProduct.css">
     <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
 </head>
 <body>
@@ -27,14 +28,20 @@
             </ul>
         </nav>
     </header>
-    <section>
-        <div id="img">
-            <img src="./img/1920x512-p-2.webp">
-        </div>
-    </section>
+    <h1>Cadastrar Camisas</h1>
+    <div id="box">
+        <div class="flex-item" id="cad-produto"></div>
+    </div>
+    <span id="mensagem"></span>
+    <div id="botaoSalvar">
+        <button id="salvar" onclick="salvarDados()">Salvar</button>
+    </div>
     <footer>
         <script src="https://kit.fontawesome.com/5288c7c39e.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="menu.js"></script>
+        <script type="text/javascript" src="./registerProduct.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </footer>
 </body>
 </html>
+

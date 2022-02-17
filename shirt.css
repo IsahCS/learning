@@ -1,0 +1,66 @@
+#box-card{
+    padding: 40px;
+}
+
+#card{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding-inline-start: 0;
+}
+
+#add-image img{
+    width: 292px;
+    height: 290px;
+    border-radius: 5px;
+}
+
+#add-image i{
+    cursor: pointer;
+    position: absolute;
+    padding: 10px;
+    font-size: 20px;
+}
+#botaoExcluir.ver {
+    /* animation: hide 2s 2s forwards; */
+    top: 170px;
+    opacity: 0.9;
+  }
+
+#botaoExcluir button{
+    margin-top: 10px; 
+    cursor: pointer;
+}
+
+#botaoExcluir{
+    transition: all 0.52s;
+    background:black;
+    border: #777 solid 1px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.52);
+    position: fixed;
+    top: -150px;
+    width: 200px;
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+} 
+
+#box-excluir{
+    display: flex;
+    justify-content: center;
+}
+
+#null{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    opacity: 0.3;
+    flex-direction: column;
+    align-items: center;
+}
+
+#null img{
+    width: 50px;
+    margin: 20px
+}

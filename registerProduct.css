@@ -1,0 +1,137 @@
+body{
+    font-family: "Gotham";
+    color: #192C53;
+}
+
+#box{
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#box, #add-img, #valor, #botaoSalvar{
+    display: flex;
+}
+
+#add-img{
+    opacity: 0.2;
+    border: solid 1px;
+    border-radius: 2px;
+}
+
+#add-img{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 290px;
+    background: #d7d7d7;
+}
+
+#add-img button:hover{
+    background-color: rgba(46, 45, 45, 0.3);
+}
+
+#add-img button, #add i{
+    background: #d7d7d7;
+    border: solid 1px;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#add a{
+    font-size: 10px
+}
+
+#cad-produto, .card-camisa{
+    border: solid 1px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 290px;
+}
+
+.marge{
+    margin-top: 10px;
+}
+
+#desc-produto{
+    height: 27px;
+    width: 281px;
+    padding-left: 5px;
+}
+
+.botao{
+    width: 50px;
+    height: 30px;
+}
+
+#valor{
+    align-items: center;
+}
+
+#valor-produto{
+    width: 51%;
+    height: 27px;
+    margin-left: 10px;
+}
+
+#valor label{
+    font-size: 15px;
+}
+
+#botaoSalvar{
+    justify-content: end;
+    margin: 30px;
+}
+
+#salvar{
+    height: 40px;
+    width: 90px;
+}
+
+.flex-item{
+    margin: 10px;
+}
+
+li{
+    list-style: none
+}
+
+@keyframes hide {
+    from { opacity: 1 }
+    to   { opacity: 0 }
+}
+
+#box-flex{
+    position: absolute;
+}
+
+#mensagemProduto, #mensagem {
+  transition: all 0.52s;
+  background:black;
+  border: #777 solid 1px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.52);
+  position: fixed;
+  top: -150px;
+  width: 50%;
+  padding: 25px 0;
+  text-align: center;
+  left: 25%;
+  color: white;
+
+}
+
+#mensagemProduto.ver, #mensagem.ver {
+  /* animation: hide 2s 2s forwards; */
+  top: 75px;
+  opacity: 0.8;
+}
