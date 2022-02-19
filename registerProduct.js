@@ -1,9 +1,18 @@
-cardRegistra = document.querySelector("#box")
+// variaveis globais
+let msg = document.querySelector("#mensagem");
+let url, descricao, valor, tamP, tamM, tamG;
+const cardRegistra = document.querySelector("#box");
+const upload = "";
 
-function card(){
+// inicializador
+(() => {
+    card();
+})();
+
+const card = () => {
     cardRegistra.innerHTML = `<div class="flex-item" id="cad-produto">
                                 <div id="add-img">
-                                    <button onclick="document.querySelector('#carregar-img').click()" class="fas fa-plus"></button>
+                                    <button onclick="carregarImagem()" class="fas fa-plus"></button>
                                     <input class="fas fa-plus" type="file" id="carregar-img" accept="image/png, image/jpg" style="display:none">
                                     <a>Adicionar Imagem</a>
                                 </div>
@@ -20,14 +29,16 @@ function card(){
                                     <button type="button" value="G" onclick="selecionar('G')" class="botao" id="g">G</button>
                                 </div>
                              </div>`
-};
-card();
-
-let inputImg = document.querySelector("#carregar-img");
-var upload = "";
-let msg = document.querySelector("#mensagem");
     
-inputImg.addEventListener('change', readFile);
+                             let inputImg = document.querySelector("#carregar-img");
+
+             
+                             inputImg.addEventListener('change', readFile);
+};
+
+function carregarImagem () {
+    document.querySelector('#carregar-img').click()
+}
 
 function readFile() {
     if (this.files && this.files[0]) {
@@ -43,17 +54,9 @@ function readFile() {
       read.readAsDataURL( this.files[0] );
     }
 }
-let url, descricao, valor, tamP, tamM, tamG;
 
-// function pegarId(){
-//     let ultimoId = localStorage.getItem("Id") || "-1";
-//     let novoId = JSON.parse(ultimoId) + 1;
-//     localStorage.setItem("Id", JSON.stringify(novoId))
-//     return novoId;
-// }
 
-async function salvarDados(){
-    
+function salvarDados(){
     let infos = {
         url: upload,
         descricao:  document.querySelector("#desc-produto").value,
@@ -61,7 +64,6 @@ async function salvarDados(){
         tamP:document.querySelector("#p").value,
         tamM:document.querySelector("#m").value,
         tamG:document.querySelector("#g").value,
-        // transactionId: pegarId()
     }    
 
     if(!validarEntradas()) {
@@ -93,12 +95,10 @@ async function salvarDados(){
         mensagem();
         return false;
     };
-    console.log("chegou no card")
     card()
 }    
 
 function validarEntradas(){
-
     if ( document.getElementById("add-img").value === "" ||
          document.getElementById("desc-produto").value === "" ||  
          document.getElementById("valor-produto").value === ""   ) { 
