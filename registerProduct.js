@@ -1,7 +1,7 @@
 // variaveis globais
+const cardRegistra = document.querySelector("#box");
 let msg = document.querySelector("#mensagem");
 let url, descricao, valor, tamP, tamM, tamG;
-const cardRegistra = document.querySelector("#box");
 let upload = "";
 
 const card = () => {
@@ -106,7 +106,6 @@ const mensagem = () => {
     $(msg).addClass('ver');
     setTimeout(function() {$(msg).removeClass('ver')}, 2000);
 };
-
 
 // inicializador
 (() => {
