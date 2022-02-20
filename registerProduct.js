@@ -2,12 +2,7 @@
 let msg = document.querySelector("#mensagem");
 let url, descricao, valor, tamP, tamM, tamG;
 const cardRegistra = document.querySelector("#box");
-const upload = "";
-
-// inicializador
-(() => {
-    card();
-})();
+let upload = "";
 
 const card = () => {
     cardRegistra.innerHTML = `<div class="flex-item" id="cad-produto">
@@ -21,7 +16,7 @@ const card = () => {
                                 </div>
                                 <div class="marge" id="valor">
                                     <label>Valor do Produto</label>
-                                    <input type="text" class="input" id="valor-produto" value="R$">
+                                    <input type="number" class="input" id="valor-produto">
                                 </div>
                                 <div class="marge" id="tam-produto">
                                     <button type="button" value="P" onclick="selecionar('P')" class="botao" id="p">P</button>
@@ -31,16 +26,14 @@ const card = () => {
                              </div>`
     
                              let inputImg = document.querySelector("#carregar-img");
-
-             
                              inputImg.addEventListener('change', readFile);
 };
 
-function carregarImagem () {
-    document.querySelector('#carregar-img').click()
-}
+const carregarImagem = () => {
+    document.querySelector('#carregar-img').click();
+};
 
-function readFile() {
+function readFile(){
     if (this.files && this.files[0]) {
         
         const read = new FileReader();
@@ -53,10 +46,9 @@ function readFile() {
       }); 
       read.readAsDataURL( this.files[0] );
     }
-}
+};
 
-
-function salvarDados(){
+const salvarDados = () => {
     let infos = {
         url: upload,
         descricao:  document.querySelector("#desc-produto").value,
@@ -83,11 +75,11 @@ function salvarDados(){
     
     if (!check ) {
         if(dados == null){
-            localStorage.setItem("dadosProduto", "[]")
+            localStorage.setItem("dadosProduto", "[]");
             dados = []
         }
-        dados.push(infos)
-        localStorage.setItem("dadosProduto", JSON.stringify(dados))
+        dados.push(infos);
+        localStorage.setItem("dadosProduto", JSON.stringify(dados));
         msg.innerText = 'Produto cadastrado';
         mensagem();   
     } else{
@@ -95,11 +87,11 @@ function salvarDados(){
         mensagem();
         return false;
     };
-    card()
-}    
+    card();
+};
 
-function validarEntradas(){
-    if ( document.getElementById("add-img").value === "" ||
+const validarEntradas = () => {
+    if ( document.getElementById("add-img").style.backgroundImage === "" ||
          document.getElementById("desc-produto").value === "" ||  
          document.getElementById("valor-produto").value === ""   ) { 
         
@@ -108,9 +100,15 @@ function validarEntradas(){
         return false;
     } 
     return true;
-}
+};
 
-function mensagem(){
+const mensagem = () => {
     $(msg).addClass('ver');
     setTimeout(function() {$(msg).removeClass('ver')}, 2000);
-}
+};
+
+
+// inicializador
+(() => {
+    card();
+})();

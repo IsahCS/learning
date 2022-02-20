@@ -31,12 +31,18 @@ nav ul .btn-menu.show{
     display: block;
 }
 
+.menu-li a, .home a, .menu a:hover{
+    color: #192C53;
+    text-decoration: none
+}
+
 ul#main-ul{
     margin: auto;
     height: 50px;
     width: 100%;
     border-top: 1px solid #DFE1E5;
     border-bottom: 1px solid #DFE1E5;
+    padding: 0;
 }
 
 .menu-li{
@@ -52,6 +58,7 @@ ul li ul li{
     display: none;
     position: absolute;
     z-index: 999;
+    padding: 0;
 }
 
 .home{
@@ -64,6 +71,11 @@ ul li ul li{
 
 #img{
     overflow: hidden;
+}
+
+.w-100{
+    object-fit: cover;
+    height: 400px;
 }
 
 @import url('http://fonts.cdnfonts.com/css/gotham');
